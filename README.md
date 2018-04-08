@@ -2,7 +2,7 @@
 Residual unet
 
 声明： tensorflow 1.2.1 及其之后版本均可以使用。
-残差U_Net：主体结构由tensorflow高级轻量级模块（slim）实现。
+残差U_Net：主体结构由tensorflow高级轻量级模块（slim）实现。all variables are initialized ! 
 
 结构原创不是本人，本人只是复现了tensorflow版本的残差 U_Net。
 
