@@ -10,4 +10,4 @@ Residual unet
 残差模块没有pool layer，可以减轻由于pool layer带来的伤害。（pool太暴力）
 
 注意：
-res_unet尺度变化相当于有4个pool layer，输入大小 128 或者 192 或者 256 比较合适。
+res_unet尺度变化相当于有多个pool layer，输入大小 128 或者 192 或者 256 比较合适。
