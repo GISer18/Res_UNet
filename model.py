@@ -80,7 +80,7 @@ class model:
                         r*0.00390625],axis=3)
         self.to_decoder=self.encoder(image,is_training)
         
-        self.middle=self.res_block(self.to_decoder[2],num_outputs=[512,512],strides=[2,2],is_training)
+        self.middle=self.res_block(self.to_decoder[2],num_outputs=[512,512],strides=[2,1],is_training)
         
         self.output=self.decoder(self.middle,self.to_decoder,is_training)
         
