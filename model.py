@@ -84,7 +84,7 @@ class model:
         
         self.output=self.decoder(self.middle,self.to_decoder,is_training)
         
-        self.score=slim.conv2d(self.output,self.class_number,1,1)
+        self.score=slim.conv2d(self.output,self.class_number,1,1,activation_fn=None)
         
         self.softmax=slim.nn.softmax(self.score+tf.constant(1e-4))
         
