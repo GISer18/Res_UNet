@@ -35,12 +35,12 @@ class model:
     
     def encoder(self,bottom,is_training):
         to_decoder=[]
-        out=slim.conv2d(bottom,64,3,1,padding='SAME')
+        out=slim.conv2d(bottom,64,3,1,padding='SAME',activation_fn=None)
         out=slim.batch_norm(out,center=True,scale=True,is_training=is_training)
         out=slim.nn.relu(out)
-        out=slim.conv2d(out,64,3,1,padding='SAME')
+        out=slim.conv2d(out,64,3,1,padding='SAME',activation_fn=None)
         
-        shortcut=slim.conv2d(bottom,64,1,1,padding='SAME')
+        shortcut=slim.conv2d(bottom,64,1,1,padding='SAME',activation_fn=None)
         shortcut=slim.batch_norm(shortcut,center=True,scale=True,is_training=is_training)
         
         output=tf.add(shortcut,out)
