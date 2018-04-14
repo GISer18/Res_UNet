@@ -22,12 +22,12 @@ class model:
         '''
         out=slim.batch_norm(bottom,center=True,scale=True,is_training=is_training)
         out=slim.nn.relu(out)
-        out=slim.conv2d(out,num_outputs[0],3,strides[0],padding='SAME')
+        out=slim.conv2d(out,num_outputs[0],3,strides[0],padding='SAME',activation_fn=None)
         out=slim.batch_norm(out,center=True,scale=True,is_training=is_training)
         out=slim.nn.relu(out)
-        out=slim.conv2d(out,num_outputs[1],3,strides[1],padding='SAME')
+        out=slim.conv2d(out,num_outputs[1],3,strides[1],padding='SAME',activation_fn=None)
         
-        shortcut=slim.conv2d(bottom,num_outputs[1],1,strides[0],padding='SAME')
+        shortcut=slim.conv2d(bottom,num_outputs[1],1,strides[0],padding='SAME',activation_fn=None)
         shortcut=slim.batch_norm(shortcut,center=True,scale=True,is_training=is_training)
         
         output=tf.add(shortcut,out)
